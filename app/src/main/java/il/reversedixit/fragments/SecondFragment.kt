@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import il.reversedixit.BuildConfig
 import il.reversedixit.R
 import il.reversedixit.databinding.FragmentSecondBinding
 import okhttp3.Call
@@ -35,6 +36,7 @@ class SecondFragment : Fragment() {
     private val binding get() = _binding!!
     private val client = OkHttpClient()
     private lateinit var imageData: ByteArray
+    private val api = BuildConfig.API_KEY
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,7 +55,7 @@ class SecondFragment : Fragment() {
                 body.toString().toRequestBody("application/json".toMediaType())
             ).header(
                 "Authorization",
-                "Bearer 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"
+                api
             ).build()
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
