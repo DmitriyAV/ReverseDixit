@@ -21,11 +21,21 @@
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
 
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
         <argument
             android:name="description"
             app:argType="string" />
+        <action
+            android:id="@+id/action_SecondFragment_to_AnswersFragment"
+            app:destination="@id/AnswersFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/AnswersFragment"
+        android:name="il.reversedixit.fragments.AnswersFragment"
+        tools:layout="@layout/fragment_answers" >
+        <action
+            android:id="@+id/action_AnswersFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+
 </navigation>

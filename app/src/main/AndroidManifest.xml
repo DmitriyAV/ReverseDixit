@@ -17,10 +17,11 @@
         android:theme="@style/Theme.ReverseDixit"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".AppActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.ReverseDixit">
+            <nav-graph android:value="@navigation/nav_graph" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
